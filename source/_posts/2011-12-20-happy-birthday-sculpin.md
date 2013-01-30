@@ -12,5 +12,6 @@ What a trip since then!
 
 Sculpin has always been a big fan of [Markdown][1]. So this post was
 written in Markdown. :)
+{{ gist(1487570) }} 
 
 [1]: http://daringfireball.net/projects/markdown/

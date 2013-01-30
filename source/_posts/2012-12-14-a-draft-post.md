@@ -11,3 +11,12 @@ environment (`dev` is the default).
 
 All draft posts will automatically be tagged `draft` so they are easy to
 find.
+
+
+```JSON
+{
+    "require": {
+        "evenement/evenement": "dev-master"
+    }
+}
+```
