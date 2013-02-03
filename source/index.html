@@ -3,7 +3,7 @@ layout: default
 title: Home
 generator: pagination
 pagination:
-    max_per_page: 3
+    max_per_page: 6
 use:
     - posts
 ---
@@ -12,7 +12,7 @@ use:
         <h3>{{ post.title }}</h3>
         <small>{{ post.date | date("l, F j, Y") }}</small>
         <div>
-            {{ post.blocks.content|raw }} 
+            {{ post.blocks.content|truncate(500)|raw }} 
             <p><a href="{{ site.url }}{{ post.url }}">Continue reading {{ post.title }} &raquo;</a></p>
         </div>
     

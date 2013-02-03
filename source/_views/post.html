@@ -1,40 +1,48 @@
 {% extends "default" %}
 {% block content_wrapper %}
     <article>
-        <h3>{{ page.title }}</h3>
-        <small>{{ post.date | date("l, F j, Y") }}</small>
-        <div>{{ page.blocks.content|raw }}</div>
+        <div class="row">
+            <div class="span8">
+                <h3>{{ page.title }}</h3>
+                <small>{{ post.date | date("l, F j, Y") }}</small>
+                <div>{{ page.blocks.content|raw }}</div>
+            </div>
+            <div class="span2">
+                {% if page.categories %}
+                <p class="categories">Categories:
+                    {% for category in page.categories %}
+                    <a href="{{ site.url }}/blog/categories/{{ category }}">{{ category }}</a>{% if not loop.last %}, {% endif %}
+                    {% endfor %}
+                </p>
+                {% endif %}
+        
+                {% if page.tags %}
+                <p class="tags">Tags:
+                    {% for tag in page.tags %}
+                        <a href="{{ site.url }}/blog/tags/{{ tag }}">{{ tag }}</a>{% if not loop.last %}, {% endif %}
+                    {% endfor %}
+                </p>
+                {% endif %}
+            </div>
+        </div>
         <hr>
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-            var disqus_shortname = 'kapustabrothers'; // required: replace example with your forum shortname
+        <div class="row">
+            <div span="10">
+                <div id="disqus_thread"></div>
+                <script type="text/javascript">
+                    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+                    var disqus_shortname = 'kapustabrothers'; // required: replace example with your forum shortname
 
-            /* * * DON'T EDIT BELOW THIS LINE * * */
-            (function() {
-                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-            })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
-        {% if page.categories %}
-            <p class="categories">
-            Categories:
-            {% for category in page.categories %}
-            <a href="{{ site.url }}/blog/categories/{{ category }}">{{ category }}</a>{% if not loop.last %}, {% endif %}
-            {% endfor %}
-            </p>
-        {% endif %}
-        {% if page.tags %}
-            <p class="tags">
-            Tags:
-            {% for tag in page.tags %}
-            <a href="{{ site.url }}/blog/tags/{{ tag }}">{{ tag }}</a>{% if not loop.last %}, {% endif %}
-            {% endfor %}
-            </p>
-        {% endif %}
+                    /* * * DON'T EDIT BELOW THIS LINE * * */
+                    (function() {
+                        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                    })();
+                </script>
+                <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+        </div>
     </article>
 {% endblock %}

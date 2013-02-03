@@ -1,5 +1,5 @@
 {
-    "hash": "45f783af834588678b55739c18c435f7",
+    "hash": "28f7e29501cd18e5bb4ca90ce02fe015",
     "packages": [
         {
             "name": "composer/composer",
@@ -2143,6 +2143,53 @@
             "homepage": "http://symfony.com"
         },
         {
+            "name": "twig/extensions",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/fabpot/Twig-extensions",
+                "reference": "5c2d515d4624bdd588226d688173cf0399a4d8cf"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/fabpot/Twig-extensions/zipball/5c2d515d4624bdd588226d688173cf0399a4d8cf",
+                "reference": "5c2d515d4624bdd588226d688173cf0399a4d8cf",
+                "shasum": ""
+            },
+            "require": {
+                "twig/twig": "1.*"
+            },
+            "time": "2013-01-04 16:55:05",
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Twig_Extensions_": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                }
+            ],
+            "description": "Common additional features for Twig that do not directly belong in core",
+            "homepage": "https://github.com/fabpot/Twig-extensions",
+            "keywords": [
+                "debug",
+                "i18n",
+                "text"
+            ]
+        },
+        {
             "name": "twig/twig",
             "version": "v1.12.1",
             "source": {
@@ -2200,6 +2247,7 @@
     "stability-flags": {
         "sculpin/sculpin": 20,
         "dflydev/embedded-composer": 20,
-        "composer/composer": 20
+        "composer/composer": 20,
+        "twig/extensions": 20
     }
 }
